@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}
+			Races
+{% endblock title %}
+
+<!------------------------------------------------->
+
+{% block head %}
+			Races
+{% endblock head %}
+
+<!------------------------------------------------->
+
+{% block content %}
+	
+	{% for race in race_names %}
+			<br>-<a href="{{ race }}">{{ race }}</a>
+	{% endfor %}
+	
+{% endblock content %}
+

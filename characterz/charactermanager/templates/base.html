@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}{% endblock title %}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "startbootstrap-simple-sidebar/vendor/bootstrap/css/bootstrap.min.css"%}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static "startbootstrap-simple-sidebar/css/simple-sidebar.css"%}" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="/index">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="/races">Races</a>
+                </li>
+                <li>
+                    <a href="/classes">Classes</a>
+                </li>
+                <li>
+                    <a href="/features">Features</a>
+                </li>
+                <li>
+                    <a href="/feats">Feats</a>
+                </li>
+                <li>
+                    <a href="/spells">Spells</a>
+                </li>
+                <li>
+                    <a href="/creator">Creator</a>
+                </li>
+                <li>
+                    <a href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+		<a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Menu</a><p></p><p></p>
+		<h1>{% block head %}5E Player's Tool{% endblock head %}</h1>
+		{% block content %}
+                <p>Welcome to the 5E Player's Tool.</p>
+		<p>This handy lil site is designed to serve as a reference for players to find all the information they need for a D&D Character. Classes, Races, even spells and features are all provided in this site (or soon will be). Later on I plan to build a creator that will allow any player to build a new homebrew class, race, whatever you want using simple tools. 
+                <p>Listed below will be news and updates about the site and maybe even highly rated homebrew content.</p>
+                {% endblock content %}
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static "startbootstrap-simple-sidebar/vendor/jquery/jquery.min.js" %}"></script>
+    <script src="{% static "startbootstrap-simple-sidebar/vendor/popper/popper.min.js" %}"></script>
+    <script src="{% static "startbootstrap-simple-sidebar/vendor/bootstrap/js/bootstrap.min.js" %}"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
